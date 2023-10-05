@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/partials/header.php'?>
 
 <?php include __DIR__ . '/partials/nav.php'?>
-    <form>
+    <form method="POST" action="/form?color=red&flower=rose">
         <input type="text" placeholder="Name" name="name">
         <input type="Number" placeholder="Age" name="age">
         <input type="submit">

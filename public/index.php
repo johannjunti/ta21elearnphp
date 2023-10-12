@@ -7,7 +7,11 @@ spl_autoload_register(function ($class){
     require_once __DIR__ . "/../src/$class.php";
 });
 
+
+require __DIR__ . '/../helpers.php';
+
 require __DIR__ . '/../routes.php';
+
 
 
 $router = new App\Router($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
@@ -21,7 +25,7 @@ if($match){
         $method = $match['action'][1];
         $controller->$method();
     } else {
-        throw new Exception('inavblid router action');
+        throw new Exception('invalid router action');
     }
 
 }   else{

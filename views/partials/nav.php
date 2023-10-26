@@ -1,4 +1,3 @@
-
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
@@ -17,7 +16,8 @@
       <a href="/" class="navbar-item">
         Home
       </a>
-      <a href="/about"class="navbar-item">
+
+      <a href="/about" class="navbar-item">
         About
       </a>
       <a href="/form" class="navbar-item">
@@ -26,28 +26,43 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-            Admin
+          Admin
         </a>
 
         <div class="navbar-dropdown">
           <a href="/admin/posts" class="navbar-item">
             Posts
           </a>
+
         </div>
       </div>
     </div>
 
     <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
+      <?php if (auth()) : ?>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <?= auth()->email ?>
           </a>
-          <a class="button is-light">
-            Log in
-          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/logout" class="navbar-item">
+              Logout
+            </a>
+          </div>
         </div>
-      </div>
+      <?php else : ?>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="/register" class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a href="/login" class="button is-light">
+              Log in
+            </a>
+          </div>
+        </div>
+      <?php endif ?>
     </div>
   </div>
 </nav>

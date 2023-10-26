@@ -37,6 +37,14 @@ class DB {
         $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
         return $stmt->fetch();
     }
+    public function where(string $table, string $className, $fieldName, $value){
+        $stmt = $this->conn->prepare("SELECT * FROM $table WHERE $fieldName='$value'");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $className);
+        return $stmt->fetchAll();
+    }
 
     public function insert($table, $fields){
         unset($fields['id']);

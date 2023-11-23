@@ -33,6 +33,9 @@
           <a href="/admin/posts" class="navbar-item">
             Posts
           </a>
+          <a href="/admin/users" class="navbar-item">
+            Users
+          </a>
 
         </div>
       </div>

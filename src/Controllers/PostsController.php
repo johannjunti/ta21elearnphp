@@ -57,5 +57,6 @@ class PostsController
     {
         $posts = Post::find($_GET['id']);
         $posts->delete();
+        header('Location: /admin/posts');
     }
 }

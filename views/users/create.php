@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="field">
-            <input type="submit" value="Register" class="button is-primary">
+            <input type="submit" value="Create" class="button is-primary">
         </div>
     </form>
 </div>
